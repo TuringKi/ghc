@@ -1,4 +1,4 @@
-ROM gitpod/workspace-full
+FROM gitpod/workspace-full
 
 RUN sudo install-packages build-essential curl libffi-dev libffi7 libgmp-dev libgmp10 \
         libncurses-dev libncurses5 libtinfo5 && \
