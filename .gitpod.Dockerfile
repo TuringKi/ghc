@@ -7,18 +7,11 @@ RUN sudo install-packages build-essential curl libffi-dev libffi7 libgmp-dev lib
     echo 'export PATH=$HOME/.cabal/bin:$HOME/.local/bin:$PATH' >> $HOME/.bashrc && \
     . /home/gitpod/.ghcup/env && \
     # Install all verions of GHC that HLS supports. Putting GHC into Docker image makes workspace start much faster.
-    ghcup install ghc 8.6.5 && \
-    ghcup install ghc 8.8.4 && \
-    ghcup install ghc 8.10.7 && \
-    ghcup install ghc 9.0.2 && \
-    ghcup install ghc 9.2.2 && \
-    ghcup install ghc 9.2.3 --set && \
+    ghcup install ghc 8.10.7 --set && \
     ghcup install hls --set && \
     ghcup install cabal --set && \
     ghcup install stack --set && \
     cabal update && \
     cabal install --disable-executable-dynamic --install-method copy --constraint "stylish-haskell +ghc-lib" \
       stylish-haskell implicit-hie hoogle && \
-    rm -rf $HOME/.cabal/store && \
-    pip install pre-commit && \
-    npm install -g http-server
+    rm -rf $HOME/.cabal/store
