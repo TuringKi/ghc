@@ -6,10 +6,10 @@ RUN sudo install-packages build-essential curl libffi-dev libffi7 libgmp-dev lib
     echo 'source $HOME/.ghcup/env' >> $HOME/.bashrc && \
     echo 'export PATH=$HOME/.cabal/bin:$HOME/.local/bin:$PATH' >> $HOME/.bashrc && \
     . /home/gitpod/.ghcup/env && \
-    ghcup install ghc 9.2.2 --set && \
-    ghcup install hls --set && \
-    ghcup install cabal --set && \
-    ghcup install stack --set && \
+    ghcup install ghc 9.2.2 && \
+    ghcup install hls && \
+    ghcup install cabal && \
+    ghcup install stack -&& \
     cabal update && \
     cabal install --disable-executable-dynamic --install-method copy --constraint "stylish-haskell +ghc-lib" \
       stylish-haskell implicit-hie hoogle && \
