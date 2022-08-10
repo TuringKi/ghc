@@ -36,4 +36,4 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && direnv hook bash >> /home/gitpod/.bashrc
   
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env  -f  https://github.com/alpmestan/ghc.nix/archive/master.tar.gz -i --arg withIde true
+  && nix-env  -f  https://github.com/alpmestan/ghc.nix/archive/master.tar.gz -i --arg withIde true bootghc ghc902
