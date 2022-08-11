@@ -10,9 +10,7 @@ RUN sudo install-packages build-essential curl libffi-dev libffi7 libgmp-dev lib
     ghcup install hls --set && \
     ghcup install cabal --set && \
     ghcup install stack --set && \
-    ghcup install alex --set && \
-    ghcup install happy --set && \
     cabal update && \
     cabal install --disable-executable-dynamic --install-method copy --constraint "stylish-haskell +ghc-lib" \
-      stylish-haskell implicit-hie hoogle && \
+      stylish-haskell implicit-hie hoogle alex happy && \
     rm -rf $HOME/.cabal/store
