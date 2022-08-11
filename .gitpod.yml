@@ -39,11 +39,7 @@ tasks:
         echo '}' >> .vscode/settings.json
       fi
 
-    init: |
-      cabal update
-      cabal configure --enable-executable-dynamic
-      cabal build --enable-tests all
-      cabal install exe:haskell-language-server
+
   
 github:
   prebuilds:
