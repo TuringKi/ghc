@@ -9,7 +9,7 @@ RUN sudo install-packages build-essential curl libffi-dev libffi7 libgmp-dev lib
     ghcup install ghc 9.2.2 && \
     ghcup install hls && \
     ghcup install cabal && \
-    ghcup install stack -&& \
+    ghcup install stack && \
     cabal update && \
     cabal install --disable-executable-dynamic --install-method copy --constraint "stylish-haskell +ghc-lib" \
       stylish-haskell implicit-hie hoogle && \
